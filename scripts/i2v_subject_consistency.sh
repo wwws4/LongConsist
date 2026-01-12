@@ -2,7 +2,7 @@ export CUDA_VISIBLE_DEVICES=0
 
 python inference/i2v_subject_consistency.py \
   --id_images "test_data/old_woman.jpg" \
-  --prompt "An elderly man standing in front of a volcano, holding a microphone as he explains the principles of volcanic eruptions. The scene is set outdoors, with the towering volcano in the background emitting light smoke, adding a sense of realism to the environment." \
+  --prompt "An elderly woman standing in front of a volcano, holding a microphone as she explains the principles of volcanic eruptions. The scene is set outdoors, with the towering volcano in the background emitting light smoke, adding a sense of realism to the environment. The woman is dressed in outdoor clothing suitable for fieldwork, and her posture and expression suggest she is confidently delivering an educational presentation. The lighting reflects natural daylight, highlighting both the volcanic landscape and the woman as she speaks." \
   --negative_prompt "static, motionless, still image, frozen, no movement, blurry, low quality, worst quality, jpeg artifacts, deformed, bad anatomy, disfigured, poorly drawn hands, poorly drawn face, extra limbs, missing limbs, fused fingers, too many fingers, text, watermark, signature, messy background, The subject in the input image and the generated video are inconsistent" \
   --lora_path "models/train/lora/lora.safetensors" \
   --lora_alpha 1.0 \

@@ -47,7 +47,7 @@ def parse_args():
     parser.add_argument('--id_images', type=str, nargs='+', default=["test_data/old_woman.jpg"],
                         help='Paths to reference images')
     parser.add_argument('--prompt', type=str, 
-                        default="An elderly man standing in front of a volcano, holding a microphone as he explains the principles of volcanic eruptions.",
+                        default="An elderly woman standing in front of a volcano, holding a microphone as she explains the principles of volcanic eruptions. The scene is set outdoors, with the towering volcano in the background emitting light smoke, adding a sense of realism to the environment. The woman is dressed in outdoor clothing suitable for fieldwork, and her posture and expression suggest she is confidently delivering an educational presentation. The lighting reflects natural daylight, highlighting both the volcanic landscape and the woman as she speaks.",
                         help='Text prompt for video generation')
     parser.add_argument('--negative_prompt', type=str,
                         default="static, motionless, still image, frozen, no movement, blurry, low quality, worst quality, jpeg artifacts, deformed, bad anatomy, disfigured, poorly drawn hands, poorly drawn face, extra limbs, missing limbs, fused fingers, too many fingers, text, watermark, signature, messy background, The subject in the input image and the generated video are inconsistent",
@@ -81,6 +81,10 @@ def parse_args():
 
 def main():
     args = parse_args()
+
+    output_dir = os.path.dirname(args.output_path)
+    if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
     
     print("=" * 60)
     print("LongCat Video Generation")
